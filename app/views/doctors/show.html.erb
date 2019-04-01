@@ -1,0 +1,73 @@
+<% if user_signed_in? %>
+<p id="notice"><%= notice %></p>
+
+<div>
+<table class="table table-bordered">
+<th><%= link_to 'Edit_Doctor', edit_doctor_path(@doctor) %> </th>
+<th><%= link_to 'Back', doctors_path %> </th>
+<th><%= link_to 'Show_Patients', doctor_patients_path(@doctor) %></th>
+</table>
+</div>
+<h2>Doctor Deatils</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Specialist</th>
+      <th scope="col">User_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @doctor.id %> </th>
+      <td> <%= @doctor.firstname %></td>
+      <td> <%= @doctor.lastname %></td>
+      <td> <%= @doctor.email %></td>
+      <td> <%= @doctor.phone %></td>
+      <td> <%= @doctor.address %></td>
+      <td> <%= @doctor.specialist %></td>
+      <td> <%= @doctor.user_id %></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Display the patients of a doctor -->
+<h2>Patients</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Dob</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Condition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for patient in @doctor.patients %>
+      <tr>
+        <th scope="row"><%= patient.id %> </th>
+        <td><%= patient.firstname %></td>
+        <td><%= patient.lastname %></td>
+        <td><%= patient.dob %></td>
+        <td><%= patient.gender %></td>
+        <td><%= patient.email %></td>
+        <td><%= patient.phone %></td>
+        <td><%= patient.address %></td>
+        <td><%= patient.condition %></td>
+        <td><%= link_to 'Show Patients', doctor_patient_path(@doctor, patient) %></td>
+      </tr>
+  </tbody>
+  <% end %>
+</table>
+  <% end %>

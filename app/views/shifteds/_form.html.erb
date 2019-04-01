@@ -1,0 +1,79 @@
+<%= form_with(model: shifted, local: true) do |form| %>
+  <% if shifted.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shifted.errors.count, "error") %> prohibited this shifted from being saved:</h2>
+
+      <ul>
+      <% shifted.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :firstname ,class:"col-md-4 control-label" %>
+    <%= form.text_field :firstname, id: :shifted_firstname, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :lastname,class:"col-md-4 control-label" %>
+    <%= form.text_field :lastname, id: :shifted_lastname, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :dob,class:"col-md-4 control-label" %>
+    <%= form.date_select :dob,start_year: 1900, end_year: Time.now.year , id: :shifted_dob, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email,class:"col-md-4 control-label" %>
+    <%= form.text_field :email, id: :shifted_email, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone,class:"col-md-4 control-label" %>
+    <%= form.text_field :phone, id: :shifted_phone, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :address,class:"col-md-4 control-label" %>
+    <%= form.text_field :address, id: :shifted_address, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :firm,class:"col-md-4 control-label" %>
+    <%= form.text_field :firm, id: :shifted_firm, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cost,class:"col-md-4 control-label" %>
+    <%= form.text_field :cost, id: :shifted_cost, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description,class:"col-md-4 control-label" %>
+    <%= form.text_area :description, id: :shifted_description, :cols=>23, :rows=>5, required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :bloodTest,class:"col-md-4 control-label" %>
+    <%= check_box_tag 'shifted[windows]', 'windows'%>Royal Hospital
+  </div>
+  <div class="form-group">
+        <%= form.label :xray,class:"col-md-4 control-label" %>
+       <%= check_box_tag 'shifted[windows]', 'windows'%>Mater Hospital
+  </div>
+   <div class="form-group">
+      <%= form.label :ctscan,class:"col-md-4 control-label" %>
+      <%= check_box_tag 'shifted[ctscan]', 'ctscan'%> Mater Hospital
+  </div>
+  <div class="form-group">
+    <%= form.label :endoscopy,class:"col-md-4 control-label" %>
+    <%= check_box_tag 'shift[endoscopy]', 'endoscopy' %>Mater Hospital
+  </div>
+
+  <div class="btn btn-default">
+    <%= form.submit 'Transfer patient' %>
+  </div>
+<% end %>

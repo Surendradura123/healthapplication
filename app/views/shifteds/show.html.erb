@@ -1,0 +1,50 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @shifted.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @shifted.lastname %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @shifted.dob %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @shifted.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shifted.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @shifted.address %>
+</p>
+
+<p>
+  <strong>Firm:</strong>
+  <%= @shifted.firm %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @shifted.cost %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shifted.description %>
+</p>
+
+<%= link_to 'Edit', edit_shifted_path(@shifted) %> |
+<%= link_to 'Back', shifteds_path %>

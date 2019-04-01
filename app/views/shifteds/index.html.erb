@@ -1,0 +1,46 @@
+<% if user_signed_in? %>
+<p id="notice"><%= notice %></p>
+
+<h1>Shifted</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Dob</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Firm</th>
+      <th>Cost</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shifteds.each do |shifted| %>
+      <tr>
+        <td><%= shifted.firstname %></td>
+        <td><%= shifted.lastname %></td>
+        <td><%= shifted.dob %></td>
+        <td><%= shifted.email %></td>
+        <td><%= shifted.phone %></td>
+        <td><%= shifted.address %></td>
+        <td><%= shifted.firm %></td>
+        <td><%= shifted.cost %></td>
+        <td><%= shifted.description %></td>
+        <td><%= link_to 'Show', shifted %></td>
+        <td><%= link_to 'Edit', edit_shifted_path(shifted) %></td>
+        <td><%= link_to 'Destroy', shifted, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shifted', new_shifted_path %>
+
+<% end %>

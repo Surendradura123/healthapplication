@@ -4,8 +4,8 @@ class Checkprice
             ans = "€10"
         elsif (person ==  2)
             ans = "€70"
-        elsif (illness == 3)
-            ans = "free"
+        elsif(person == 3)
+            ans = "€0"
         end
     return ans
     end

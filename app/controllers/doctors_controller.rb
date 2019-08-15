@@ -5,8 +5,26 @@ class DoctorsController < ApplicationController
   before_action :ensure_admin, :only => [:edit, :destroy]
   # GET /doctors
   # GET /doctors.json
+
+
+
+  def set_cookie
+    cookies[:user_name] = "Surendra"
+    cookies[:user_email] = "suren.dura@yahoo.com"
+  end
+
+  def show_cookie
+    @user_name = cookies[:user_name]
+    @user_email = cookies[:user_email]
+  end
+
+  def delete_cookie
+    cookies.delete :user_name
+    cookies.delete :user_email
+  end
   def index
     @doctors = Doctor.all
+
   end
 
   # GET /doctors/1
@@ -35,6 +53,13 @@ class DoctorsController < ApplicationController
   def edit
   end
 
+  def search
+    if params[:search].blank?
+      @doctors = Doctor.all
+    else
+      @doctors = Doctor.search(params)
+    end
+  end
   # POST /doctors
   # POST /doctors.json
   def create
@@ -85,6 +110,8 @@ class DoctorsController < ApplicationController
 
   end
 
+  
+
   def ensure_admin
     unless current_user && current_user.admin?
       render :text => "Access Error Message", :status => :unauthorized
@@ -100,5 +127,7 @@ class DoctorsController < ApplicationController
     def doctor_params
       params.require(:doctor).permit(:firstname, :lastname, :email, :phone, :address, :specialist, :user_id)
     end
+
+
 
 end

@@ -1,13 +1,58 @@
 
-  <ul class="nav">
+<nav class="navbar navbar-light bg-light">
 
-    <li class="nav-item"><%= link_to 'Doctors', doctors_path %></li>
-      <%= render 'layouts/navigation_links' %>
+      <a class="navbar-brand" href="/">HealthApplication</a>
 
-    <li class="nav-item"><%= link_to 'Add New Doctors', new_doctor_path %></li>
-      <%= render 'layouts/navigation_links' %>
+      <form class="form-inline">
 
 
-      <li><%= link_to 'Third party transfers', new_shifted_path %></li>
-    <%= render 'layouts/navigation_links' %>
-  </ul>
+    <a class="btn btn-outline-primary" href="/users/sign_in" role="button">
+    Login
+    </a>
+
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/users/sign_up" role="button">
+      Sign Up
+      </a>
+    </div>
+
+
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/doctors" role="button">
+      Doctors
+      </a>
+    </div>
+
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/doctors/new" role="button">
+       New Doctor
+      </a>
+    </div>
+
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/shifteds" role="button">
+      Add_Shifted
+      </a>
+    </div>
+
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/transfers" role="button">
+      Transfer_Patients
+      </a>
+    </div>
+
+    <div style="padding-left: 10px;">
+        <% if user_signed_in? %>
+          <li> <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, :class => 'btn btn-outline-success' %></li>
+        <% end %>
+    </div>
+    <div style="padding-left: 10px;">
+        <% if user_signed_in? %>
+        <li>  <%= link_to'Edit registration', edit_user_registration_path, :class => 'btn btn-outline-success' %> </li>
+        <% end %>
+    </div>
+
+
+  </form>
+
+</nav>

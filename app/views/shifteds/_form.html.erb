@@ -11,69 +11,72 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :firstname ,class:"col-md-4 control-label" %>
-    <%= form.text_field :firstname, id: :shifted_firstname, required: true %>
-  </div>
+  <div class="jumbotron">
+    <div class="form-group">
+        <div class="field">
+          <%= form.label :firstname  %>
+          <%= form.text_field :firstname, id: :shifted_firstname,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :lastname,class:"col-md-4 control-label" %>
-    <%= form.text_field :lastname, id: :shifted_lastname, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :lastname %>
+          <%= form.text_field :lastname, id: :shifted_lastname,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :dob,class:"col-md-4 control-label" %>
-    <%= form.date_select :dob,start_year: 1900, end_year: Time.now.year , id: :shifted_dob, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :dob %>
+          <%= form.date_select :dob,start_year: 1900, end_year: Time.now.year , id: :shifted_dob,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :email,class:"col-md-4 control-label" %>
-    <%= form.text_field :email, id: :shifted_email, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :email %>
+          <%= form.text_field :email, id: :shifted_email,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :phone,class:"col-md-4 control-label" %>
-    <%= form.text_field :phone, id: :shifted_phone, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :phone %>
+          <%= form.text_field :phone, id: :shifted_phone,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :address,class:"col-md-4 control-label" %>
-    <%= form.text_field :address, id: :shifted_address, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :address %>
+          <%= form.text_field :address, id: :shifted_address,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :firm,class:"col-md-4 control-label" %>
-    <%= form.text_field :firm, id: :shifted_firm, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :firm %>
+          <%= form.text_field :firm, id: :shifted_firm,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :cost,class:"col-md-4 control-label" %>
-    <%= form.text_field :cost, id: :shifted_cost, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :cost %>
+          <%= form.text_field :cost,type: :number, id: :shifted_cost,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :description,class:"col-md-4 control-label" %>
-    <%= form.text_area :description, id: :shifted_description, :cols=>23, :rows=>5, required: true %>
-  </div>
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_area :description, id: :shifted_description,class:'form-control', required: true %>
+        </div>
 
-  <div class="form-group">
-    <%= form.label :bloodTest,class:"col-md-4 control-label" %>
-    <%= check_box_tag 'shifted[windows]', 'windows'%>Royal Hospital
-  </div>
-  <div class="form-group">
-        <%= form.label :xray,class:"col-md-4 control-label" %>
-       <%= check_box_tag 'shifted[windows]', 'windows'%>Mater Hospital
-  </div>
-   <div class="form-group">
-      <%= form.label :ctscan,class:"col-md-4 control-label" %>
-      <%= check_box_tag 'shifted[ctscan]', 'ctscan'%> Mater Hospital
-  </div>
-  <div class="form-group">
-    <%= form.label :endoscopy,class:"col-md-4 control-label" %>
-    <%= check_box_tag 'shift[endoscopy]', 'endoscopy' %>Mater Hospital
-  </div>
-
-  <div class="btn btn-default">
-    <%= form.submit 'Transfer patient' %>
-  </div>
+        <div class="field">
+          <%= form.label :bloodTest %>
+          <%= check_box_tag 'shifted[windows]', 'windows'%>Royal Hospital
+        </div>
+        <div class="field">
+              <%= form.label :xray %>
+             <%= check_box_tag 'shifted[windows]', 'windows'%>Mater Hospital
+        </div>
+         <div class="field">
+            <%= form.label :ctscan %>
+            <%= check_box_tag 'shifted[ctscan]', 'ctscan'%> Mater Hospital
+        </div>
+        <div class="field">
+          <%= form.label :endoscopy %>
+          <%= check_box_tag 'shift[endoscopy]', 'endoscopy' %>Mater Hospital
+        </div>
+      </div>
+      <div class="btn btn-default">
+        <%= form.submit 'Transfer patient' %>
+      </div>
+    </div>
 <% end %>

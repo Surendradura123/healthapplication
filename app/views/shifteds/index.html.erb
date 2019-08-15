@@ -3,18 +3,18 @@
 
 <h1>Shifted</h1>
 
-<table>
+<table  class="table table-bordered">
   <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Dob</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>Firm</th>
-      <th>Cost</th>
-      <th>Description</th>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Dob</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Firm</th>
+      <th scope="col">Cost</th>
+      <th scope="col">Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,6 +38,13 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<br>
+<h3>Import Shifteds</h3>
+<%= form_tag import_shifteds_path,multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Upload Shifteds" %>
+<% end %>
 
 <br>
 

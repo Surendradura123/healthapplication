@@ -9,9 +9,6 @@ class PatientsController < ApplicationController
   def index
       @doctor = Doctor.find(params[:doctor_id])
       @patients = @doctor.patients
-
-      
-
   end
 
   # GET /patients/1

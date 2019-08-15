@@ -1,6 +1,6 @@
 # the concrete component we would like to decorate, a car in our example
 class BasicShifted
-    def initialize(cost, firm, color)
+    def initialize(cost, firm)
         @cost = cost
         @firm = firm
         @description = "basic checkup"

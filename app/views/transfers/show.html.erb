@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @transfer.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @transfer.lastname %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @transfer.dob %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @transfer.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @transfer.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @transfer.address %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @transfer.cost %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @transfer.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @transfer.description %>
+</p>
+
+<%= link_to 'Edit', edit_transfer_path(@transfer) %> |
+<%= link_to 'Back', transfers_path %>

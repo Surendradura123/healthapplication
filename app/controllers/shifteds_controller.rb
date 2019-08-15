@@ -8,6 +8,10 @@ class ShiftedsController < ApplicationController
     @shifteds = Shifted.all
   end
 
+  def import
+    Shifted.import(params[:file])
+    redirect_to shifteds_path, notice: "Doctors Added successfully"
+  end
   # GET /shifteds/1
   # GET /shifteds/1.json
   def show
@@ -29,13 +33,13 @@ class ShiftedsController < ApplicationController
 
     @shifted.firstname = params[:shifted][:firstname]
     @shifted.lastname = params[:shifted][:lastname]
-    @shifted.lastname = params[:shifted][:dob]
-    @shifted.lastname = params[:shifted][:email]
-    @shifted.lastname = params[:shifted][:phone]
-    @shifted.lastname = params[:shifted][:address]
+    @shifted.dob = params[:shifted][:dob]
+    @shifted.email = params[:shifted][:email]
+    @shifted.phone = params[:shifted][:phone]
+    @shifted.address = params[:shifted][:address]
     @shifted.firm = params[:shifted][:firm]
           # create an instance/object of a BasicShift
-    myShifted = BasicShift.new(10, @shifted.firm)
+    myShifted = BasicShifted.new(10, @shifted.firm)
           # add the extra features to the new shiftted
 
           if params[:shifted][:bloodtest].to_s.length > 0 then

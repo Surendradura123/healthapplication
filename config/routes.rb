@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :shifteds
+  resources :transfers
+root 'doctors#index'
+
+
+  resources :shifteds do
+    collection {post :import}
+  end
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
@@ -19,6 +25,12 @@ Rails.application.routes.draw do
 get '/signedinuserdoctor'=>'doctors#signedinuserdoctor'
   resources :doctors do
       resources :patients
+      collection do
+        get:search # creates a new path for the search
+      end
+
+
   end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,74 @@
+<%= form_with(model: transfer, local: true) do |form| %>
+  <% if transfer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transfer.errors.count, "error") %> prohibited this transfer from being saved:</h2>
+
+      <ul>
+      <% transfer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="jumbotron">
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, id: :transfer_firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :transfer_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.date_select :dob, id: :transfer_dob %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :transfer_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, id: :transfer_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :transfer_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.text_field :cost, id: :transfer_cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :transfer_date %>
+  </div>
+  <div class="field">
+    <%= form.label :firm %>
+    <%= form.text_field :firm, id: :transfer_firm %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :transfer_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hospital %>
+    <%= check_box_tag 'transfer[windows]', 'windows'%>Mater Hospital
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  </div>
+  </div>
+<% end %>
